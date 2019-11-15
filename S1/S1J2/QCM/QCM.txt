@@ -1,0 +1,19 @@
+une fonction :
+c)Un regroupement de code indépendant du reste du programme;
+
+
+une Structure de données:
+c)Un regroupement de variables;
+
+un Tableau :
+a)Un regroupement de variables de même type
+
+l'utilité d'un tri sur un tableau
+
+b)La recherche d’éléments est plus aisée;
+
+la complexité du tri sélection :
+c)O(n²);
+
+le tri qui peut avoir la plus petite complexité :
+f)Le tri par dénombrement

@@ -1,0 +1,28 @@
+ Pourquoi utilisons-nous les classes ?
+
+
+une classe ?
+c)Une abstraction d'un objet de la vie réelle;
+
+
+un attribut d'une Class:
+a)Une variable qui définit un de ses états, une propriété;
+
+QCM 4 - Comment identifier une Class ?
+
+
+QCM 6 - Comment définir les fonctions d'une Class ?
+f)Il n'y a aucune logique : toutes les fonctions vont dans toutes les class.
+
+QCM 7 - Comment utiliser une Class ?
+
+a)On la déclare, on l'instancie et on l'utilise;
+d)Le code ne marche pas, une exception est levée;
+
+
+l'encapsulation:
+c)La portée des éléments de la class;
+
+
+un constructeur
+d)L'élément qui permet d'instancier une classe;

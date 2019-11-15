@@ -1,0 +1,29 @@
+
+
+Fonction Palindrome(ch: tab[1..n]: caractère,d:entier,f:entier): entier;
+
+   SI (d >= f)
+
+      retourne(1);
+
+   SINON 
+      SI (ch[d] != ch[f] )
+       
+       retourner (0) ;
+   
+   SINON
+       retourner  Palindrome(ch,d+1,f-1)
+
+   FINSI
+finfonction
+
+var d,f:entier;
+d=0;
+f=longueur(ch)-1
+SI (Palindrome(ch,d,f) == 1
+
+   ecrire(ch,"est palindrome")
+SINON
+   ecrire(ch,"n'est pas palindrome")
+FINSI
+        

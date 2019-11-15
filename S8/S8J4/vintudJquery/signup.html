@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="signup.css" rel="stylesheet">
+    <title>SIGNUP</title>
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="signup.js" charset="utf-8"></script>
+  <body>
+<div class="main">
+
+<ul class="tab-group">
+    <li class="tab active"><a href="./authentification.html">Log In</a></li>
+  <li class="tab "><a href="./signup.html">Sign Up</a></li>
+
+  <li class="tab"><a href="./home.html">home</a></li>
+  <li class="tab"><a href="./announcement.html">Announcement</a></li>
+  <li class="tab"><a href="./announcements.html">List oF Announcements</a></li>
+</ul>
+<div id="form">
+<p id="head"></p> <!-- This Segment Displays The Validation Rule -->
+<h2> jQuery form validation</h2>
+
+
+
+<form  action="" method="post">
+<label>Firstname:</label>
+<input class="firstname" type="text" name="firstname"  value="">
+<p id="p1"></p> <!--This Segment Displays The Validation Rule For Name-->
+<label>Lastname(3-15 characters):</label>
+<input class="lastname" type='text' name="lastname" >
+<p id="p2"></p> <!-- This Segment Displays The Validation Rule For User Name -->
+<label >Pseudo:</label>
+<input class="pseudo" type="text"  name="userid" >
+<p id="p3"></p> <!-- This Segment Displays The Validation Rule For date -->
+<label>Email:</label>
+<input class="email" type="email" name="email" >
+<p id="p4" ></p> <!-- This Segment Displays The Validation Rule For Email -->
+
+<label>User password:</label>
+
+<input class="password" type="password" name="psw">
+<p></p>
+<label>phone Number:</label>
+<input class="phone" name="phone" type='text'>
+<p id="p5"></p> <!-- This Segment Displays The Validation Rule For phone number -->
+<label>Address</label>
+<input type="text" name="address" class="address" value="">
+<br><br>
+ <input id="submit" type="submit" value="Submit">
+</form>
+
+<p class="success"></p>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+ <script src="signup.js"></script>
+  </body>
+</html>

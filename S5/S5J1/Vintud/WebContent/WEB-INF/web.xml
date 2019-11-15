@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<element>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Vintud</display-name>
+  
+  
+  
+  <servlet> 
+  <servlet-name>ConnectionController</servlet-name>
+  <servlet-class>/Vintud/src/projectVintud/ConnectionController.java</servlet-class>
+  </servlet> 
+  <servlet-mapping>
+  <servlet-name>ConnectionController</servlet-name>
+  <url-pattern>/signup</url-pattern>
+  </servlet-mapping>
+  
+  
+
+    <servlet> 
+  <servlet-name>HomeController</servlet-name>
+  <servlet-class>/Vintud/src/projectVintud/HomeController.java</servlet-class>
+  </servlet> 
+  <servlet-mapping>
+  <servlet-name>HomeController</servlet-name>
+  <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+      <servlet> 
+  <servlet-name>CreateAnnouncementController</servlet-name>
+  <servlet-class>projectVintud.CreateAnnouncementController.java</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>CreateAnnouncementController</servlet-name>
+  <url-pattern>/create/announcement</url-pattern> 
+  </servlet-mapping>
+  
+    
+  
+        <servlet> 
+  <servlet-name>AnnoucementController</servlet-name>
+  <servlet-class>/Vintud/src/projectVintud/AnnoucementController.java</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>AnnoucementController</servlet-name>
+  <url-pattern>/announcements</url-pattern> 
+  </servlet-mapping>
+  
+  
+    
+      <servlet> 
+  <servlet-name>SignInController</servlet-name>
+  <servlet-class>projectVintud.SignInController.java</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>SignInController</servlet-name>
+  <url-pattern>/signin</url-pattern> 
+  </servlet-mapping>
+  
+  
+
+  
+  
+  <welcome-file-list>
+   <welcome-file>index.html</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
+
+</element>

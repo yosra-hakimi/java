@@ -1,0 +1,31 @@
+un algorithme:
+
+  b)L'intelligence derrière le code;
+  d)Une manière de programmer;
+  f)Une suite d'opérations binaires et conditionnelles.
+
+
+une Variable :
+
+  d)Une valeur dans mon programme
+
+un Type:
+  
+  c)Une précision sur le contenu d'une variable;
+
+une Condition:
+
+  b)Un test d'expression booléenne;
+
+une Boucle
+
+  Une itération sur une suite d'éléments;
+
+ la Complexité
+  
+  b)La totalité des instructions élémentaires d'un algorithme;
+
+
+
+
+

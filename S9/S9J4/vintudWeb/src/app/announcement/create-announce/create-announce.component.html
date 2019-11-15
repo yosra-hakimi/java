@@ -1,0 +1,50 @@
+
+
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h2>Enregistrer un nouveau annonce</h2>
+      <form [formGroup]="announceForm"  #f=ngForm (ngSubmit)="onSaveAnnounce(f.value)">
+
+        <div class="form-group">
+          <label for="title">Titre</label>
+          <input type="text" id="title"
+                 class="form-control" formControlName="title">
+        </div>
+        <div class="form-group shadow-textarea">
+            <label for="exampleFormControlTextarea6">Description</label>
+            <input formControlName="description" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..." >
+          </div>
+          <div>
+
+          <label class="mdb-main-label">Categorie</label> <br>
+          <select formControlName="Categorie" class="mdb-select md-form colorful-select dropdown-info">
+              <option  value="T-shirt"> T-shirt </option>
+              <option value="Polo">Polo</option>
+              <option value="veste">veste</option>
+              <option value="pantalon">pantalon</option>
+          
+            </select>
+            
+          </div>
+          <br>
+          <div class="form-group">
+              <label for="localisation">Localisation</label>
+              <input type="text" id="localisation"
+                     class="form-control" formControlName="localisation">
+            </div>
+            <div class="form-group">
+                <label for="price">Prix</label>
+                <input type="number" id="price"
+                       class="form-control" formControlName="price">
+              </div>
+
+
+        <button   class="btn btn-success" [disabled]="announceForm.invalid"
+                type="submit">Enregistrer
+               
+        </button>
+  
+      </form>
+    </div>
+  </div>

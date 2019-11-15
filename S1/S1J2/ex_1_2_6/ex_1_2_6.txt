@@ -1,0 +1,30 @@
+algorithme application_tri_selection
+
+tabint est un tableau d'entiers
+taille est un entier
+
+	debut 
+
+		procedure tri_selection
+                   i,j,min:entier
+                  
+                   debut 
+			pour i allant de  a taille-1 [saut de 1]
+			min <- i
+				pour j allant de i+1 a taille [saut de 1]
+
+					si tabint[j] < tabint[min] alors 
+
+						min <- j
+					fin si 
+				fin pour
+
+			si min != i alors
+				tmp <- tabint[min]
+				tabint[min] <- tabint[i]
+				tabint[i] <- tmp
+			finsi
+
+			fin pour
+	fin 
+fin

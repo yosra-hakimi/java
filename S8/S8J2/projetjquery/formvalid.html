@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="formvalid.css" rel="stylesheet">
+    <title>Form Validation jQuery</title>
+  </head>
+  <body>
+<div class="main">
+<h1>Form Validation Using jQuery</h1>
+<div id="form">
+<p id="head"></p> <!-- This Segment Displays The Validation Rule -->
+<h2> jQuery form validation</h2>
+
+<form  action="" method="post">
+<label>Firstname:</label>
+<input class="firstname" type="text" name="" value="">
+<p id="p1"></p> <!--This Segment Displays The Validation Rule For Name-->
+<label>Lastname(3-15 characters):</label>
+<input class="lastname" type='text'>
+<p id="p2"></p> <!-- This Segment Displays The Validation Rule For User Name -->
+<label >Birthday:</label>
+<input class="date" type="date" > <span id= "age"></span>
+<p id="p3"></p> <!-- This Segment Displays The Validation Rule For date -->
+
+<p class="error"></p>
+<label>Email:</label>
+<input class="email" type="email">
+<p id="p4" ></p> <!-- This Segment Displays The Validation Rule For Email -->
+<label>phone Number:</label>
+<input class="phone" type='text'>
+<p id="p5"></p> <!-- This Segment Displays The Validation Rule For phone number -->
+<label>Frequency:</label>
+<input type="range" min="0" max="7" class="slider" id="slider"><span id="p7"></span>
+<p id="p6"></p>
+
+<br><br>
+ <input id="submit" type="submit" value="Submit">
+</form>
+
+<p class="success"></p>
+</div>
+
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+ <script src="formvalid.js"></script>
+  </body>
+</html>

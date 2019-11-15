@@ -1,0 +1,20 @@
+algorithme maximale;
+var n,i,max;
+Tableau  t[] : entier;
+début
+	pour i allant de 0 à n-1 faire 
+ 		ecrire ("entrer le nombre numero",i)
+		lire (t[i])
+	fin pour
+
+	max <- t[0]
+
+	pour i allant de 0 à n-1 faire 
+		si t[i]>max
+			max <- t[i]
+		fin si
+	fin pour
+
+ 	ecrire("Le plus grand de ces nombres est ",max)
+fin
+

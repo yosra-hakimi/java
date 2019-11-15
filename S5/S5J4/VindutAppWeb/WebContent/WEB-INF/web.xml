@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>VindutAppWeb</display-name>
+  
+  
+ <servlet>
+    <servlet-name>Home</servlet-name>
+    <servlet-class>com.thp.project.vintud.servlets.HomeController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Home</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SignIn</servlet-name>
+    <servlet-class>com.thp.project.vintud.servlets.SignInController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignIn</servlet-name>
+    <url-pattern>/signin</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+   <servlet-name>SignUp</servlet-name>
+    <servlet-class>com.thp.project.vintud.servlets.SignUpController</servlet-class>
+
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignUp</servlet-name>
+    <url-pattern>/signup</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  
+  
+   <servlet-name>Announcement</servlet-name>
+    <servlet-class>com.thp.project.vintud.servlets.CreateAnnouncementController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Announcement</servlet-name>
+    <url-pattern>/create/announcement</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+      <servlet-name>Announcements</servlet-name>
+    <servlet-class>com.thp.project.vintud.servlets.AnnoucementController</servlet-class>
+
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Announcements</servlet-name>
+    <url-pattern>/announcements</url-pattern>
+  </servlet-mapping>
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+</web-app>
+
+

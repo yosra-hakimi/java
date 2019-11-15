@@ -1,0 +1,71 @@
+
+
+ <h2>les annonces</h2>
+
+
+
+<button (click)="onGetAnnounce()" >GetAnnounce</button>
+
+       {{announces | json}}
+ 
+<div class="panel-body">
+    <table *ngIf="announces" class="table table-striped">
+    <tr>
+      <th> id </th> <th> title </th> <th> description</th> <th> category_id </th> <th>price</th>
+       <th>picture</th> <th>publication_date</th> <th>is_available</th> <th>view_number</th>
+       <th>localisation</th> <th>user_id</th>
+    </tr>
+ 
+    <tr *ngFor="let a of announces">
+      
+      <td>{{a.id }}</td>
+      <td>{{a.title}}</td>
+      <td>{{a.description}}</td>
+      <td>{{a.category_id}}</td>
+      <td>{{a.price}}</td>
+      <td>{{a.picture}}</td>
+      <td>{{a.publication_date}}</td>
+      <td>{{a.is_available}}</td>
+      <td>{{a.view_number}}</td>
+      <td>{{a.localisation}}</td>
+      <td>{{a.user_id}}</td>
+ 
+    </tr>
+ 
+ 
+    </table>
+      </div>
+
+
+    
+
+<div class="card" style="width: 20rem;" *ngFor="let a of announces"  >
+    
+   
+    <ul class="list-group list-group-flush" >
+      <li  class="list-group-item" ><img  width="150px" src="http://www.audiocity.fr/images/pic/veste%20adidas%20orange%20et%20marron,veste%20adidas%20a%20sport%202000,achat%20veste%20adidas%20manche%20adidas.jpg" alt="Card image cap"></li>
+      <li class="list-group-item"><h3>{{a.title}}</h3></li>
+      <li class="list-group-item">{{a.description}}</li>
+      <li class="list-group-item">{{a.category_id}}</li>
+      <li class="list-group-item">{{a.price}}</li>
+      <li class="list-group-item">{{a.localisation}}</li>
+    </ul>
+
+    
+ 
+  </div>
+
+  <div class="card" style="width: 20rem;">
+    
+      <ul class="list-group list-group-flush">
+        <li  class="list-group-item" ><img  width="150px" src="http://www.audiocity.fr/images/pic/veste%20adidas%20orange%20et%20marron,veste%20adidas%20a%20sport%202000,achat%20veste%20adidas%20manche%20adidas.jpg" alt="Card image cap"></li>
+        <li class="list-group-item"><h3>veste adidas</h3></li>
+        <li class="list-group-item">Some quick example text to build on the card title and make up the bulk of the card's content.</li>
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+   
+    </div>
+
+

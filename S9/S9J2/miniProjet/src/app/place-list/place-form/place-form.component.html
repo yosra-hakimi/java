@@ -1,0 +1,74 @@
+<div class="container-fluid">
+
+ 
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" >
+
+    <div class="form-group">
+
+      <label>Name</label>
+
+      <input type="text" [class.is-invalid]="name.invalid&&name.touched" formControlName="name" class="form-control" >
+      <div *ngIf="name.invalid&&name.touched">
+        <small class="text-danger" *ngIf="name.errors?.required">Name is required"</small>
+        <small class="text-danger" *ngIf="name.errors?.maxlength">Name must have maximum 30 characters"</small>
+        </div>
+
+      <div class="form-group">
+
+        <label>Address</label>
+
+        <input type="text"  [class.is-invalid]="adress.invalid&&adress.touched"  formControlName="address" class="form-control">
+        <div *ngIf="adress.invalid&&adress.touched">
+          <small class="text-danger" *ngIf="adress.errors?.required">Adress is required"</small>
+          <small class="text-danger" *ngIf="adress.errors?.minlength">Name must be at least 3 characters"</small>
+          <small class="text-danger" *ngIf="adress.errors?.maxlength">Name must have maximum 20 characters"</small>
+          </div>
+      </div>
+
+      
+      <div class="form-group">
+
+        <label>Postal Code</label>
+
+        <input type="number"  formControlName="postcode" name="postcode"  class="form-control">
+      
+      </div>
+
+      
+
+      <div class="form-group">
+
+        <label>rating</label>
+
+        <input type="number" formControlName="rating" class="form-control">
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Flag</label>
+        
+        <input type="checkbox" formControlName="flag" name="flag"  class="form-control" >
+
+
+
+      </div>
+
+
+
+    </div>
+
+    <button mat-raized-button  [disabled]="!myForm.valid" type="submit">ADD PLACE</button>
+
+
+
+  </form>
+  
+  {{myForm.value | json}}
+
+
+
+</div>
+
+

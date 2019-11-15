@@ -1,0 +1,5 @@
+Exercice 1_1_1:la complexité C1=O(1)
+
+Exercice 1_1_2:C2=O(2n)
+
+Exercice 1_1_3:C3=O(2n)

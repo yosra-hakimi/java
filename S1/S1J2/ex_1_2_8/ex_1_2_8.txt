@@ -1,0 +1,128 @@
+
+algorithme dicho_insert
+
+
+ /* Saisie des données */
+
+
+PROCEDURE SAISIE_Tab(VAR T: TABLEAU; N:ENTIER)
+
+VAR i: ENTIER
+
+DEBUT
+
+POUR i DE 1 A N
+
+FAIRE LIRE(T[i])
+
+FINPOUR
+
+FIN
+
+
+
+fonction insert(VAR T: TABLEAU,int val):entier
+   
+DEBUT
+
+ 						/* Déplacer les éléments plus grands que */
+ 						/* VAL d'une position vers l'arrière.    */
+
+ pour i allant de N à (i>0)&&(t[i-1]>VAL)  faire
+
+       t[i]=t[i-1];                     /* VAL est copié à la position du dernier */
+
+                  		                  			
+
+       t[i]=VAL;			/* élément déplacé. */
+				
+
+ 	N++;                            /* Nouvelle dimension du tableau ! */
+
+				
+ 					 /* Edition des résultats */
+
+
+ ecrire("Tableau résultat ");
+ pour i allant de 1 a N  faire
+    afficher( t[i]);
+
+ retourner 0;
+}
+
+FIN
+
+
+
+fonction compare(Chaine1,Chaine2):entier;
+
+Parametres Chaine1, Chaine2 : CHAINE DE CARACTERE[I];
+i:entier
+Debut
+
+  i <- 0;
+    SI( longueur(chaine1) != longueur(chaine2) )
+        retourner 0;
+
+    pour(i=0;i<longueur(chaine1);i++)
+
+        SI ( chaine1[i] != chaine2[i])
+
+            retourner 0;
+
+    retourner 1;
+
+ 
+fin 
+
+
+
+
+fonction recherche( T[]:tableau[1..N] de chaine de caractére,x:chaine de caractére) :entier;
+m:entier;
+DEBUT	
+	repeter
+		m <- (min+max) div 2
+		SI Compare(T[m],x) == 1 alors 
+			test <- vrai 
+   
+		SINON SI Compare(T[m],x)== 0 alors 
+			max <- m-1
+		SINON
+			min <- m+1
+		FINSI
+	jusqu'a ((test=vrai) ou (min<max))
+
+		SI(test == vrai et (min<max))
+			retourner 1;
+		SINON
+ 
+			retourner 0;
+
+FIN 
+
+
+
+
+
+
+Debut 
+
+ecrire("Dimension N du tableau initial : ");
+lire ( N );
+SAISIE_Tab(T; N);
+ ecrire("Elément à insérer : ");
+ lire(VAL );
+A<- insert(t, val)
+
+
+R<-recherche(t,x)
+   SI(R == 1 )
+    
+        afficher("la chaine existe");
+   
+    SINON
+    
+     afficher("la chaine n'existe pas");
+
+FIN

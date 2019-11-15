@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.springframework.org/schema/beans"
+     xsi:schemaLocation="
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="moussaillon" class="com.thp.spring.simplecontext.entity.Moussaillon">
+
+
+
+</bean>
+
+ <bean id="bateau" class="com.thp.spring.simplecontext.entity.Bateau">
+
+
+</bean>
+
+<bean id="myDataSource"
+       class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+       <property name="driverClassName" value="org.postgresql.Driver" />
+       <property name="url" value="jdbc:postgresql://localhost:5432/bateaumoussaillonJDBC" />
+       <property name="username" value="postgres" />
+       <property name="password" value="yosra" />
+       <!--<property name="socketTimeout" value="10"/>-->
+
+
+  </bean>
+
+<bean id = "jdbcTemplate"
+     class = "org.springframework.jdbc.core.JdbcTemplate">
+<property name = "dataSource" ref = "myDataSource" />
+</bean>
+
+
+<bean id="bateaudao" class="com.thp.spring.simplecontext.dao.impl.BateauDAOImpl">
+<property name="template" ref="jdbcTemplate"></property>
+</bean>
+
+<bean id="moussaillonda" class="com.thp.spring.simplecontext.dao.impl.MoussaillonDAOImpl">
+<property name="template" ref="jdbcTemplate"></property>
+</bean>
+
+
+
+</beans>

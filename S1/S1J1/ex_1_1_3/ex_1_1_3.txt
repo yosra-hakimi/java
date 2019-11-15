@@ -1,0 +1,43 @@
+algorithme random;
+var r,p,i:entier;
+
+
+
+debut 
+r <- arrondi(rand(50));
+   répéter
+
+         ecrire ("Entrez la position de l'ennemi entre 1 et 50 :");
+         lire(p);
+
+    jusqu'à ( 1<= p <=50 )
+
+  finrépéter; 
+
+
+i=1 ;
+
+	tantque((p != r) ou (i < 5) )
+
+   		lire(p)
+
+   		selon que
+       	 		cas  p>r : ecrire(" Loupé ! (Aide : l'angle est plus petit) ");
+                    	           retour ligne ;
+                    	           ecrire("Entrez à nouveau la position de l'ennemi :") ;
+                 
+                 
+
+      			 cas  p<r : ecrire(" Loupé ! (Aide : l'angle est plus grand)");
+                 	            RetourLigne;
+                 	            ecrire("Entrez à nouveau la position de l'ennemi :") ;
+
+      	 		cas  p=r :  ecrire(" Touché ! bravo vous avez coulé votre ennemi ");
+
+                 finselonque
+     i=i+1;
+fintantque
+fin
+
+ 
+

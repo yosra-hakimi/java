@@ -1,0 +1,10 @@
+algorithme canons;
+var nbre-de-canon,temps_max_survie,nbre_de_tirs:entier;
+    cadence:réel;
+
+	debut
+
+  	nbre_de_tirs = ((temps_max_survie * 60)/cadence) * nbre-de-canon ;
+   	ecrire ("Le nombre de tirs que vous pouvez supporter en ",temps_max_survie,"minutes : ",nbre_de_tirs)
+
+	fin
