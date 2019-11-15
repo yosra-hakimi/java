@@ -1,0 +1,122 @@
+body {
+    font-family: Open Sans,Arial;
+    color: #454545;
+    font-size: 16px;
+    margin: 2em auto;
+    max-width: 800px;
+    padding: 1em;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+
+.really{
+
+    margin-top: -1em;
+}
+
+span.motherfw {
+    color: #730000;
+}
+span.wrong {
+    color: #c0392b;
+    font-weight: 600;
+    text-decoration: underline;
+}
+a:visited {
+    color: #941352;
+}
+
+a{
+    color:#07a;
+}
+span.sblue, span.sviolet {
+    cursor: not-allowed;
+}
+span.sblue {
+    color: #00e;
+}
+span.sviolet {
+    color: #551a8b;
+}
+
+div.fancyPositioning div.picture-left {
+    float: left;
+    width: 40%;
+    overflow: hidden;
+    margin-right: 1em;
+}
+div.fancyPositioning div.picture-left img {
+    width: 100%;
+}
+div.fancyPositioning div.tleft p:first-child {
+    margin-top: 0;
+}
+div.fancyPositioning div.tleft {
+    float: left;
+    width: 55%;
+}
+p.caption {
+    font-size: .7em;
+}
+div.fancyPositioning:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+span.fourfour:before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-left: .2em;
+    margin-right: .2em;
+    background-color: #444;
+}
+span.fourfive:before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-left: .2em;
+    margin-right: .2em;
+    background-color: #454545;
+}
+blockquote author {
+    display: block;
+    clear: both;
+    font-size: .6em;
+    margin-left: 2.4rem;
+    font-style: oblique;
+}
+blockquote author:before {
+    content: "- ";
+    margin-right: 1em;
+}
+blockquote:before {
+    font-family: Times New Roman,Times,Arial;
+    color: #666;
+    content: open-quote;
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-top: 0;
+    margin-right: .2rem;
+    width: 1.2rem;
+    margin-left:-40px;
+}
+blockquote span {
+
+    margin-left: 1rem;
+  
+}
+
+a.kopimi img.kopimi {
+    height: 2em;
+}
+
+
+a.kopimi, a.kopimi img.kopimi {
+    display: block;
+    margin: auto;
+    /* margin-right: auto; */
+}
