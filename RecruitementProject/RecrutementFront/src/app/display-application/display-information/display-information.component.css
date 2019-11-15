@@ -1,0 +1,19 @@
+.identitynav {
+
+    display : flex;
+    
+    justify-content: space-around;
+    
+    }
+    
+    .identitynav i {
+     
+        cursor: pointer;
+        
+        }
+    
+        .identitynav i:hover{
+     
+           color: rgb(38, 38, 236);
+            
+            }

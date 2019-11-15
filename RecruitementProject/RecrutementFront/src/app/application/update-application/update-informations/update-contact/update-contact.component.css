@@ -1,0 +1,39 @@
+.civility {
+    margin-top: 40px;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    align-items: baseline;
+    margin-bottom: 20px;
+    }
+
+    .civility span {
+        margin-right: 100px;
+      
+        }
+    
+
+    .form-check-label {
+     margin-left : 10px;
+    }
+
+ .Checkcivility {
+    display : flex;
+    justify-content: space-around;
+    align-items: baseline;
+    width : 300px;
+ }
+
+    .error {
+     position : absolute;
+
+   margin-bottom: 5px;
+
+    }
+
+
+    label {
+   
+    margin: 7px;
+ 
+     }

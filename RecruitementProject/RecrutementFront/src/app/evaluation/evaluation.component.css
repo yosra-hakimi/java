@@ -1,0 +1,14 @@
+.panel-body { margin: 1% 2%;} 
+.error {position: absolute; margin-bottom: 5px;} 
+.form-group{ display: inline-block; }
+.btn.btn-primary{ float: right;}
+.panel-heading-title{font-weight:400; margin-left: 1%;margin-right: 2%}
+.panel-heading-description{display: flex; width: 100%;margin-top: 7px; }
+h4{display: flex;}
+#comment-position{ margin: 0% 19%;}
+.table-responsive{     display: flex; flex-direction: column;}
+#form-row-heading{padding: 0% 2%;}
+.form-group.col-md-3{ display: flex; flex-direction: row; justify-content: space-around;}
+#form-group-col-md-3-form-control{ width: 65%!important;} 
+#form-group-col-md-3-form-control-label{ width: 55%!important;} 
+#validate-button {margin: 0% 46%;}

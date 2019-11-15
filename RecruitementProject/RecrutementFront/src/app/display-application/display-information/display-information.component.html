@@ -1,0 +1,28 @@
+<div class="row" style="margin-top:60px !important">
+  <div class="col-md-12">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading " (click)='toggleAppearence()'>
+        <h4> <i [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'"
+            style="color:blanchedalmond !important"></i> Identité <span class="label label-danger"
+            *ngIf="error!=0">{{errorNumber}}</span></h4>
+
+      </div>
+      <div class="panel-body" *ngIf='appear'>
+        <div class="identitynav">
+          <i class=" fa  fa-info-circle fa-4x " (click)='toggleContact()'
+            [ngStyle]="{'color' : appearContact?  '#337ab7' : 'black'}"> </i>
+          <i class=" fa  fa-suitcase fa-4x " (click)='toggleExperience()'
+            [ngStyle]="{'color' : appearExperience?  '#337ab7' : 'black'}"> </i>
+          <i class=" fa  fa-folder-open fa-4x " (click)='toggleFolder()'
+            [ngStyle]="{'color' : appearFolder ?  '#337ab7' : 'black'}"> </i>
+        </div>
+          <app-diplay-contact [candidat]="candidat" *ngIf="appearContact"></app-diplay-contact>
+          <app-diplay-experience [candidat]="candidat" *ngIf="appearExperience"></app-diplay-experience>
+          <app-diplay-app-folder [candidat]="candidat" *ngIf="appearFolder"></app-diplay-app-folder>
+
+      </div>
+
+    </div>
+  </div>
+</div>

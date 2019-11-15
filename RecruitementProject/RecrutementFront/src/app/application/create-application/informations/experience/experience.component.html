@@ -1,0 +1,55 @@
+<form [formGroup]="ExperienceForm" (change)="OnChanges()">
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Poste Actuel *</label>
+            <input type="text" class="form-control" id="inputEmail4" name="actuelPost" formControlName="actuelPost">
+            <div *ngIf="ExperienceForm.controls.actuelPost.errors && ExperienceForm.controls.actuelPost.value || identityError == 'true'" class="error">
+                <small class="text-danger" *ngIf="identityError == 'true' && !ExperienceForm.controls.actuelPost.value "> Ce Champ est
+          Obligatoire </small>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group col-md-6">
+            <label for="inputState">formation *</label>
+            <select id="inputState" class="form-control" name="formation" formControlName="formation">
+        <option selected></option>
+        <option> bac3 </option>
+        <option> bac5 </option>
+        <option> bac7 </option>
+      </select>
+            <div *ngIf="ExperienceForm.controls.formation.errors && ExperienceForm.controls.formation.value  || identityError == 'true'" class="error">
+                <small class="text-danger" *ngIf="identityError == 'true' && !ExperienceForm.controls.formation.value"> Ce Champ est
+            Obligatoire
+        </small>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputState">Ecole *</label>
+            <select id="inputState" class="form-control" name="university" formControlName="university">
+                    <option selected></option>
+                    <option value={{item.id}} selected *ngFor="let item of universities"> 
+                        {{item.universityName}} </option>
+
+      </select>
+
+            <div *ngIf="ExperienceForm.controls.university.errors && ExperienceForm.controls.university.value || identityError == 'true'" class="error">
+                <small class="text-danger" *ngIf="identityError == 'true' && !ExperienceForm.controls.university.value "> Ce Champ est
+            Obligatoire
+        </small>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</form>

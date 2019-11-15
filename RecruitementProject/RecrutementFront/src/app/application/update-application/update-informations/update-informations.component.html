@@ -1,0 +1,45 @@
+<div class="row" style="margin-top:60px !important">
+  <div class="col-md-12">
+
+      <div class="panel panel-primary">
+          <div class="panel-heading " (click)='toggleAppearence()'>
+              <h4> <i [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'" style="color:blanchedalmond !important"></i> Identité </h4>
+              <span *ngIf="identityError== 'true'">
+
+        <i class=" fa  fa-exclamation fa-2x " (click)='toggleFolder()' [ngStyle]="{'color' : 'red'}"> </i>
+
+
+      </span>
+
+
+          </div>
+          <div class="panel-body" *ngIf='appearParent'>
+              <div class="identitynav">
+                  <div>
+                      <i class=" fa  fa-exclamation fa-1x exclamationIcon" (click)='toggleFolder()' *ngIf="identityError == 'true'&& (contactFromGrandParent.invalid || mailExist)" [ngStyle]="{'color' : 'red'}"> </i>
+                      <i class=" fa  fa-user-plus fa-3x " (click)='toggleContact()' [ngStyle]="{'color' : appearContact?  '#337ab7' : 'black'}">  <span style="font-size: 23px">Coordonnées</span> </i>
+                  </div>
+
+                  <div>
+                      <i class=" fa  fa-exclamation fa-1x exclamationIcon" (click)='toggleFolder()' *ngIf="identityError == 'true' && (experienceFromGrandParent.invalid )" [ngStyle]="{'color' : 'red'}"> </i>
+                      <i class=" fa  fa-suitcase fa-3x " (click)='toggleExperience()' [ngStyle]="{'color' : appearExperience?  '#337ab7' : 'black'}"> <span style="font-size: 23px">Expérience</span></i>
+
+                  </div>
+                  <div>
+                      <i class=" fa  fa-exclamation fa-1x exclamationIcon" (click)='toggleFolder()' *ngIf="identityError == 'true' && folderFromGrandParent.invalid " [ngStyle]="{'color' : 'red'}"> </i>
+                      <i class=" fa  fa-folder-open fa-3x " (click)='toggleFolder()' [ngStyle]="{'color' : appearFolder ?  '#337ab7' : 'black'}"> <span style="font-size: 23px">Dossier</span></i>
+                  </div>
+              </div>
+
+              <app-update-contact *ngIf='appearContact'  (contactEvent)="onChangesCantact($event)" [contactFromParent]="contactFromGrandParent.value" [identityError]="identityError" ></app-update-contact>
+              <app-update-experience *ngIf='appearExperience' (experienceEvent)="onChangesExperience($event)" [experienceFromParent]="experienceFromGrandParent.value" [identityError]="identityError" [universities]="universities"></app-update-experience>
+              <app-update-app-folder *ngIf='appearFolder' (folderEvent)="onChangesFolder($event)" [folderFromParent]="folderFromGrandParent.value" [identityError]="identityError" [manager]="manager"></app-update-app-folder>
+          </div>
+
+          <div class="panel-footer">
+          </div>
+
+      </div>
+  </div>
+
+</div>

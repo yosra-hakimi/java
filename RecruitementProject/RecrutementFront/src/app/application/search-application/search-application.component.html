@@ -1,0 +1,73 @@
+<h2>Recheche d'un candidat par critère</h2>
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <form [formGroup]="searchForm">
+
+
+          <div class="input">
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="university">Ecole</label>
+                <input type="text" class="form-control" placeholder="ecole" formControlName="university">
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="lastName">Nom</label>
+                <input type="text" class="form-control" placeholder="nom" formControlName="lastName">
+              </div>
+            </div>
+
+
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="statut">Statut</label>
+                <input type="text" class="form-control" id="statut" placeholder="statut" formControlName="statut">
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="experience">Experience</label>
+                <input type="text" class="form-control" id="experience" placeholder="experience"
+                  formControlName="experience">
+              </div>
+            </div>
+
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="source">Source</label>
+                <input type="text" class="form-control" id="source" placeholder="source" formControlName="source">
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="formation">Formation</label>
+                <input type="text" class="form-control" id="formation" placeholder="formation"
+                  formControlName="formation">
+              </div>
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <br>
+    <div class="button">
+      <button class="btn btn-primary" type="submit" (click)="searchCandidate()" [disabled]="!searchForm.valid">chercher
+        un candidat</button></div>
+
+
+
+    <br>
+  </div>
+</div>
+
+<div *ngIf="candidats.length!=0">
+  <app-disp-candidat [candidats]="candidats"></app-disp-candidat>
+</div>
+
+<app-candidat [rejected]="rejected" [pending]="pending" [accepted]="accepted" [propalInProgress]="propalInProgress"
+  [interviewInProgress]="interviewInProgress"></app-candidat>

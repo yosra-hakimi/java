@@ -1,0 +1,7 @@
+.panel-body { margin: 2%; padding: 0px;} 
+#error {position: absolute; } 
+.form-group{ display: inline-block;margin-bottom: 30px; }
+.btn.btn-primary.mb-2 {width: 150px;}
+.col-md-10 {margin: 0% 8%;}   
+.table-responsive {padding-bottom: 2%;}
+.btn.btn-primary.mb-2{ margin:0% 40%;} 

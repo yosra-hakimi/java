@@ -1,0 +1,101 @@
+<div *ngFor="let candidate of candidates ; index as i">
+  <div *ngFor="let interview of candidate.application.interview ; index as j">
+    <div class="row" style="margin-top:60px !important">
+      <div class="col-md-12">
+        <div class="panel panel-primary" *ngIf="candidate.application.nextStep=='interview'||candidate.application.nextStep=='propal'">
+          <div class="panel-heading" (click)='toggleAppearence(i, j)'>
+            <h4> <i [ngClass]="interview.showInterview ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'"
+                style="color:blanchedalmond !important"></i>
+              <div class="panel-heading-description">Candidat :<div class="panel-heading-title">
+                  {{candidate.lastName | uppercase}} {{candidate.firstName | uppercase}} </div>
+                Date :<div class="panel-heading-title">
+                  {{interview.interviewDate}}</div>
+              </div>
+            </h4>
+          </div>
+
+          <div class="panel-body" *ngIf="interview.showInterview">
+            <div _ngcontent-hko-c6="" class="table-responsive">
+              <div _ngcontent-sws-c7="" class="form-row" id="form-row-heading">
+
+                <div class="form-group col-md-4">
+                  <label>Offre : </label>
+                  <input _ngcontent-sws-c4="" class="form-control disabled" type="text" [(ngModel)]="interview.jobOffer"
+                    disabled id="form-group-col-md-3-form-control">
+                </div>
+                <div class="form-group col-md-4">
+                  <label id="form-group-col-md-3-form-control-label">Type Entretien : </label>
+                  <input _ngcontent-sws-c4="" class="form-control" type="text" [(ngModel)]="interview.interviewType"
+                    disabled id="form-group-col-md-3-form-control">
+                </div>
+                <div class="form-group col-md-4">
+                  <label id="form-group col-md-3-label">BU : </label>
+                  <input _ngcontent-sws-c4="" class="form-control" type="text" [(ngModel)]="interview.businessUnit"
+                    disabled id="form-group-col-md-3-form-control">
+                </div>
+              </div>
+              <div  id="form-row-details">
+                <div _ngcontent-sws-c7="" class="form-row">
+                  <div class="form-group col-md-4">
+                    <label>Statut *: </label>
+                    <select _ngcontent-sws-c7="" class="form-control" [(ngModel)]="interview.statut" >
+                     <option selected value="En cours">En cours</option>
+                        <option selected value="Accepté">Accepté</option>
+                        <option selected value="Négatif" >Négatif</option>
+                      </select>
+                  </div> 
+                  <div class="form-group col-md-4">
+                    <label>Avis : </label>
+                    <input _ngcontent-sws-c7="" class="form-control" type="text" [(ngModel)]="interview.opinion">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label>Etape Suivante  : </label>
+                    <input _ngcontent-sws-c7="" class="form-control" type="text" [(ngModel)]="interview.nextStep">
+                  </div>
+                </div>
+                <div _ngcontent-sws-c7="" class="form-row">
+                  <div class="form-group col-md-4">
+                    <label>Date Evaluation : </label>
+                    <input _ngcontent-sws-c7="" class="form-control " type="date" [(ngModel)]="interview.date">
+                  </div>
+                  <div class="form-group col-md-4" *ngIf="interview.interviewType=='Propal'">
+                    <label>Rénumération Actuelle : </label>
+                    <input _ngcontent-sws-c7="" class="form-control" type="number"
+                      [(ngModel)]="interview.currentRemuneration">
+                  </div>
+                  <div class="form-group col-md-4" *ngIf="interview.interviewType=='Propal'">
+                    <label>Rénumération Souhaité : </label>
+                    <input _ngcontent-sws-c7="" class="form-control" type="number"
+                      [(ngModel)]="interview.desiredRemuneration">
+                  </div></div>
+                  <div _ngcontent-sws-c10="" class="form-row" id="comment-position">
+                    <div class="form-group col-md-11">
+                      <label>Commentaire : </label>
+                      <textarea _ngcontent-sws-c7="" rows="4" class="form-control" type="text"
+                        [(ngModel)]="interview.comment"></textarea>
+                    </div>
+                  </div> 
+                  <div class="row">
+                    <div class="col-md-3">
+                        <button class="btn btn-primary" id="validate-button" (click)="updateEvaluationInterview(i,j)"><i _ngcontent-fgq-c4=""
+                          class="fa fa-check" > Valider</i>
+                      </button>
+                    </div>
+                    <div class="col-md-6"></div>
+                      <div class="col-md-3">
+                          <button class="btn btn-danger" id="validate-button" (click)="rejeter(i,j)"><i _ngcontent-fgq-c4=""
+                            class="fa fa-remove" > Rejeter</i>
+                        </button>
+                      </div>
+
+                      
+                  </div>
+               
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

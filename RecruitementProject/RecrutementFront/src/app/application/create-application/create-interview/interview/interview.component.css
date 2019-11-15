@@ -1,0 +1,44 @@
+.iconcenter{
+  text-align: center
+}
+.padding{
+padding: 5px;
+}
+.margin{
+margin: 5px;
+}
+.btn-social {
+position: relative;
+text-align: center;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.btn-block+.btn-block {
+  margin-top: 5px;
+}
+.btn-dropbox {
+  color: #fff;
+  background-color: #1087dd;
+  border-color: rgba(0,0,0,0.2);
+}
+.btn-block {
+display: block;
+width: 100%;
+}
+
+.fa-plus-circle {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color : #337ab7;
+}
+
+.fa-angle-double-up, .fa-angle-double-down {
+  color : #0a0a0a;
+}
+
+.error {
+  position : absolute;
+}

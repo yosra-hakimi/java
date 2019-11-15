@@ -1,0 +1,190 @@
+<form [formGroup]="personalInformationForm" (change)="OnChanges()">
+
+  <div class="civility">
+
+      <span>Civilité * </span>
+      <div class="Checkcivility">
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="civility" id="exampleRadios1" checked formControlName="civility" value="M">
+              <label class="form-check-label" for="exampleRadios1">
+        M
+      </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="civility" id="exampleRadios2" formControlName="civility" value="Mme">
+              <label class="form-check-label" for="exampleRadios2">
+        Mme
+      </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="civility" id="exampleRadios3" formControlName="civility" value="Melle">
+              <label class="form-check-label" for="exampleRadios3">
+        Melle
+      </label>
+          </div>
+      </div>
+  </div>
+
+
+
+  <div class="form-row">
+
+      <div class="form-group col-md-6">
+          <label for="inputEmail4">Nom *</label>
+          <input type="text" class="form-control" placeholder="Nom" formControlName="lastName" name="lastName">
+          <div *ngIf="personalInformationForm.controls.lastName.errors && personalInformationForm.controls.lastName.value || identityError == 'true'" class="error">
+              <small class="text-danger" *ngIf="identityError == 'true' && !personalInformationForm.controls.lastName.value "> Ce Champ est
+          Obligatoire </small>
+          </div>
+
+          <div *ngIf="personalInformationForm.controls.lastName.errors && personalInformationForm.controls.lastName.value" class="error">
+              <small class="text-danger" *ngIf="personalInformationForm.controls.lastName.errors.maxlength || personalInformationForm.controls.lastName.errors.pattern">Merci
+        d'ajouter un nom correct </small>
+          </div>
+
+      </div>
+
+      <div class="form-group col-md-6">
+          <label for="inputPassword4">Prénom *</label>
+          <input type="text" class="form-control" placeholder="Prénom" formControlName="firstName" name="firstName">
+          <div *ngIf="personalInformationForm.controls.firstName.errors && personalInformationForm.controls.firstName.value || identityError == 'true'" class="error">
+              <small class="text-danger" *ngIf="identityError == 'true' && !personalInformationForm.controls.firstName.value "> Ce Champ est
+          Obligatoire</small>
+
+          </div>
+
+          <div *ngIf="personalInformationForm.controls.firstName.errors && personalInformationForm.controls.firstName.value" class="error">
+              <small class="text-danger" *ngIf="personalInformationForm.controls.firstName.errors.maxlength || personalInformationForm.controls.firstName.errors.pattern">Merci
+        d'ajouter un prénom correct </small>
+          </div>
+      </div>
+
+
+  </div>
+
+
+
+
+  <div class="form-row">
+
+      <div class="form-group col-md-6">
+          <label for="inputEmail4">Tel *</label>
+          <input type="number" class="form-control" id="inputEmail4" placeholder="téléphone" formControlName="phoneNumber" name="phoneNumber">
+          <div *ngIf="personalInformationForm.controls.phoneNumber.errors && personalInformationForm.controls.phoneNumber.value || identityError == 'true'" class="error">
+              <small class="text-danger" *ngIf="identityError == 'true' && !personalInformationForm.controls.phoneNumber.value "> Ce Champ est
+          Obligatoire </small>
+
+          </div>
+          <div *ngIf="personalInformationForm.controls.phoneNumber.errors && personalInformationForm.controls.phoneNumber.value" class="error">
+              <small class="text-danger" *ngIf=" personalInformationForm.controls.phoneNumber.errors.pattern"> Merci d'ajouter
+            un Numéro de téléphone Correct</small>
+
+          </div>
+
+      </div>
+      <div class="form-group col-md-6">
+          <label for="inputEmail4">Email *</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Email" formControlName="mail" name="mail" >
+          <div *ngIf="personalInformationForm.controls.mail.errors && personalInformationForm.controls.mail.value || identityError == 'true'" class="error">
+              <small class="text-danger" *ngIf="identityError == 'true' && !personalInformationForm.controls.mail.value "> Ce Champ est
+          Obligatoire
+      </small>
+          </div>
+          <div *ngIf="personalInformationForm.controls.mail.errors && personalInformationForm.controls.mail.value" class="error">
+              <small class="text-danger" *ngIf=" personalInformationForm.controls.mail.errors.pattern"> merci d'ajouter une
+        adresse mail correcte </small>
+
+          </div>
+
+          
+
+      </div>
+
+  </div>
+
+
+  <div class="form-row">
+      <div class="form-group col-md-6">
+          <label for="inputEmail4">Date de Naissance *</label>
+          <input type="date" class="form-control" id="inputEmail4" formControlName="dateOfBithday" name="dateOfBithday">
+          <div *ngIf="personalInformationForm.controls.dateOfBithday.errors && personalInformationForm.controls.dateOfBithday.value || identityError == 'true'" class="error">
+              <small class="text-danger" *ngIf="identityError == 'true' && !personalInformationForm.controls.dateOfBithday.value"> Ce Champ est
+          Obligatoire </small>
+
+          </div>
+      </div>
+      <div class="form-group col-md-6">
+          <label for="inputState">Nationalité *</label>
+          <select id="inputState" class="form-control" formControlName="nationality" name="nationality">
+      <option  value = {{nationality}} selected *ngFor="let nationality of nationalities"> {{nationality}} </option>
+    </select>
+
+          <div *ngIf="personalInformationForm.controls.nationality.errors && personalInformationForm.controls.nationality.value || identityError == 'true'" class="error">
+              <small class="text-danger" *ngIf="identityError == 'true' && !personalInformationForm.controls.nationality.value"> Ce Champ est
+                      Obligatoire </small>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="form-row">
+
+      <div class="form-group col-md-4">
+          <label for="inputState"> Type Pièce Identité </label>
+          <select id="inputState" class="form-control" formControlName="typeIdentityPiece" name="typeIdentityPiece">
+      <option selected>Passport</option>
+      <option> CIN</option>
+    </select>
+      </div>
+      <div class="form-group col-md-4">
+          <label for="inputEmail4">N°Pièce Identité</label>
+          <input type="text" class="form-control" id="inputEmail4" placeholder="Numéro " formControlName="numIdentityPiece" name="numIdentityPiece">
+      </div>
+
+      <div class="form-group col-md-4">
+          <label for="inputEmail4"> date d’expiration Pièce Identité</label>
+          <input type="date" class="form-control" id="inputEmail4" formControlName="expirationIdentityPiece" name="expirationIdentityPiece">
+      </div>
+  </div>
+
+  <div class="form-row">
+      <div class="form-group col-md-6">
+          <label for="inputEmail4"> Date 1ère expérience * </label>
+          <input type="date" class="form-control" id="inputEmail4" formControlName="dateFirstExperience">
+          <div *ngIf="personalInformationForm.controls.dateFirstExperience.errors && personalInformationForm.controls.dateFirstExperience.value || identityError == 'true'" class="error">
+              <small class="text-danger" *ngIf="identityError == 'true' &&!personalInformationForm.controls.dateFirstExperience.value"> Ce Champ est
+          Obligatoire </small>
+
+          </div>
+      </div>
+      <div class="form-group col-md-6">
+          <label for="inputEmail4">Expérience * </label>
+          <input type="text" class="form-control" id="inputEmail4" name="experience" formControlName="experience" disabled value={{experience()}}>
+      </div>
+
+
+  </div>
+
+  <div class="form-row">
+
+      <div class="form-group col-md-6">
+          <label for="inputState">Entreprise </label>
+          <select id="inputState" class="form-control" formControlName="entreprise" name="entreprise">
+                <option>...</option>
+                <option selected>TALAN TUNISIA / TUNIS</option>
+                <option selected>TALAN FRANCE / PARIS</option>
+                <option selected>TALAN FRANCE / NANTES</option>
+                <option selected>TALAN FRANCE / LYON</option>
+                <option selected>TALAN SUISSE / GENÈVE</option>
+                <option selected>TALAN PLANAXIS / MONTREAL</option>
+                <option selected>TALAN CANADA / TORONTO</option>
+                <option selected>TALAN LUXEMBOURG</option>
+                <option selected>TALAN UK / LONDRES</option>
+                <option selected>TALAN ESPAGNE / MADRID</option>
+                <option selected>TALAN SERVICE PRESSE</option>
+                <option selected>TALAN SIÈGE (HQ) - PARIS</option>
+    </select>
+      </div>
+  </div>
+
+</form>

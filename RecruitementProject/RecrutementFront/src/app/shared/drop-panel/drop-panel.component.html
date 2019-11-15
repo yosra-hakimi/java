@@ -1,0 +1,118 @@
+<div class="row" style="margin-top:40px !important">
+  <div class="col-md-12">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading " (click)='toggleAppearence()'>
+        <h4><i [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'"
+               style="color:blanchedalmond !important"></i>Informations personnelles <span class="label label-danger"
+                                                                                           *ngIf="error!=0">{{errorNumber}}</span>
+        </h4>
+
+      </div>
+      <div class="panel-body" *ngIf='appear'>
+        <app-personal-information (changes)="onChanges($event)"></app-personal-information>
+      </div>
+
+      <div class="panel-footer">
+        {{personalInfo|json}}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="row" style="margin-top:60px !important">
+  <div class="col-md-12">
+    
+      <div class="panel panel-primary">
+          <div class="panel-heading " (click)='toggleAppearence()'>
+              <h4> <i  [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'" 
+                style="color:blanchedalmond !important"></i> Identité  <span class="label label-danger" *ngIf="error!=0">{{errorNumber}}</span></h4>
+               
+          </div>
+          <div class="panel-body"  *ngIf='appear'>
+              <app-additionnel-info (changes)="onChanges($event)"></app-additionnel-info>
+          </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading " (click)='toggleAppearence()'>
+        <h4><i [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'"
+               style="color:blanchedalmond !important"></i>Information personnelle suplémentaire <span
+          class="label label-danger" *ngIf="error!=0">{{errorNumber}}</span></h4>
+
+      </div>
+      <div class="panel-body" *ngIf='appear'>
+        <app-additionnel-info (changes)="onChanges($event)"></app-additionnel-info>
+      </div>
+
+      <div class="panel-footer">
+        <p> {{personalInfo|json}}</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Interview -->
+<div class="row" style="margin-top:60px !important">
+  <div class="col-md-12">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading " (click)='toggleAppearence()'>
+        <h4><i [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'"  style="color:blanchedalmond !important"></i>Entretien<span
+          class="label label-danger" *ngIf="error!=0">{{errorNumber}}</span></h4>
+
+      </div>
+      <div class="panel-body" *ngIf='appear'>
+        <app-interview (changes)="onChanges($event)"></app-interview>
+      </div>
+
+      <div class="panel-footer">
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- EndInterview -->
+<div class="row" style="margin-top:60px !important">
+  <div class="col-md-12">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading " (click)='toggleAppearenceForms()'>
+        <h4><i [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'"
+               style="color:blanchedalmond !important"></i>Information personnelle suplémentaire <span
+          class="label label-danger" *ngIf="contactErrorNumber!=0">{{contactErrorNumber + experienceErrorNumber}}</span>
+        </h4>
+
+      </div>
+      <div class="panel-body" *ngIf='appearForms'>
+        <div class="row">
+          <div class="col-md-3 col-md-offset-3"><a class="btn btn-social-icon btn-fax " (click)='showContact()'><i
+            class="fa fa-fax fa-4x"></i><span class="label label-danger"
+                                              *ngIf="contactErrorNumber!=0">{{contactErrorNumber}}</span></a></div>
+          <div class="col-md-3 col-md-offset-1"><a class="btn btn-social-icon btn-briefcase"
+                                                   (click)='showExsperience()'><i
+            class="fa  fa-briefcase fa-4x"></i><span class="label label-danger"
+                                                     *ngIf="contactErrorNumber!=0">{{experienceErrorNumber}}</span></a>
+          </div>
+        </div>
+        <div *ngIf='contactAppear'>
+          <app-contact-information (changes)="onContactChanges($event)"></app-contact-information>
+        </div>
+        <div *ngIf='experienceAppear'>
+          <app-experience (changes)="onExperienceChanges($event)"></app-experience>
+        </div>
+      </div>
+
+      <div class="panel-footer">
+        <p>contact :{{contact|json}}</p>
+        <p>experience :{{experience|json}}</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+

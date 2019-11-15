@@ -1,0 +1,7 @@
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+  <app-header></app-header>
+  <app-sidebar *ngIf="authService.loggedIn()"></app-sidebar>
+
+</nav>

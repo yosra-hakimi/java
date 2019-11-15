@@ -1,0 +1,77 @@
+
+
+
+<div class="row" style="margin-top:40px !important">
+  <div class="col-md-12">
+    
+      <div class="panel panel-primary">
+          <div class="panel-heading " (click)='toggleAppearence()'>
+              <h4> <i  [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'" 
+                style="color:blanchedalmond !important"></i> CV et Documents  <span class="label label-danger" *ngIf="error!=0">{{errorNumber}}</span></h4>
+               
+          </div>
+          <div class="panel-body"  *ngIf='appear'>
+          
+   
+
+             
+        
+              <mat-card>
+                    <form [formGroup]="uploadForm" (change)="uploadSubmit()">
+                      <mat-card-content>
+                    
+                        <br>
+                        <input formControlName="document" type="file" ng2FileSelect   [uploader]="uploader" multiple/><br/>
+                        <br>
+                        <div class="drop-zonee">
+                        <div ng2FileDrop [uploader]="uploaderdoc"  class="drop-zone">
+                           Drag and drop files to upload
+                        </div>
+                        </div>
+                        <table>
+                          <thead>
+                          <tr>
+                            <th width="90%">
+                              File Name
+                            </th>
+                            <th width="10%">
+                              Remove
+                            </th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr *ngFor="let item of uploader.queue">
+                            <th width="90%">
+                              {{ item.file.name}}({{item.file.size/1000000}} MB)
+                            </th>
+                            <th class="text-center" width="10%">
+                              <mat-icon (click)="item.remove()">delete</mat-icon>
+                            </th>
+                          </tr>
+                          </tbody>
+                          <tbody>
+                            <tr *ngFor="let item of uploaderdoc.queue">
+                              <th width="90%">
+                                {{ item.file.name}}({{item.file.size/1000000}} MB)
+                              </th>
+                              <th class="text-center" width="10%">
+                                <mat-icon (click)="item.remove()">delete</mat-icon>
+                              </th>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                      </mat-card-content>
+                    </form>
+              </mat-card>
+              
+           
+          </div>
+
+
+
+  
+     
+  </div>
+  </div>
+</div>

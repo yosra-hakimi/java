@@ -1,0 +1,38 @@
+<div class="row" style="margin-top:60px !important">
+  <div class="col-md-12">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading " (click)='toggleAppearence()'>
+        <h4> <i [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'"
+            style="color:blanchedalmond !important"></i> Entretien </h4>
+      </div>
+      <div class="panel-body" *ngIf='appear'>
+
+        <!--
+          wait client confirmation
+
+          <div class="identitynav">
+         
+
+
+          <i class=" fa  fa-wechat fa-3x " (click)='toggleInterview()'
+            [ngStyle]="{'color' : appearInterview?  '#337ab7' : 'black'}"> <span
+              style="font-size: 23px">Entretien</span></i>
+
+
+          <i class=" fa  fa-dollar fa-3x " (click)='togglePropal()'
+            [ngStyle]="{'color' : appearPropal ?  '#337ab7' : 'black'}"> <span
+              style="font-size: 23px" >Propal</span></i>
+
+        </div>
+        -->
+       <app-interview  [formInterview]="formInterview" [interviewsChild]="interviewsParent" (changes)="onChangesInterview($event)"></app-interview>  <!--*ngIf='appearInterview'-->
+       <!--<app-propal *ngIf='appearPropal'></app-propal>-->
+
+      </div>
+
+
+    </div>
+  </div>
+
+</div>

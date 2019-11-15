@@ -1,0 +1,30 @@
+.identitynav {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.identitynav i {
+    cursor: pointer;
+}
+
+.identitynav i:hover {
+    color: rgb(38, 38, 236);
+}
+
+.panel-heading {
+    display: flex;
+    align-items: baseline
+}
+
+h4 {
+    margin-right: 30px;
+}
+
+.fa-user-plus,
+.fa-suitcase,
+.fa-folder-open {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

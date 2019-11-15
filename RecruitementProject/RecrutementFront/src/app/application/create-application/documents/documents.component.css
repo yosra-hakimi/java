@@ -1,0 +1,21 @@
+label {
+    
+    margin:20px;
+    
+    }
+    
+    form {
+        width: 70%;
+        margin-top : 50px;
+      
+    }
+
+
+    .drop-zone{
+        height:200px;
+        width: 510px;
+        border: 2px solid gray;
+        padding: 146px;
+      }
+      
+     

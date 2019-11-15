@@ -1,0 +1,6 @@
+projectKey=TalanRecrutementBack
+serverUrl=http://127.0.0.1:19000
+serverVersion=6.7.7.38951
+dashboardUrl=http://127.0.0.1:19000/dashboard/index/TalanRecrutementBack
+ceTaskId=AWtvlpR-HOMkguU6KSyk
+ceTaskUrl=http://127.0.0.1:19000/api/ce/task?id=AWtvlpR-HOMkguU6KSyk

@@ -1,0 +1,95 @@
+<form [formGroup]="folderForm" (change)="OnChanges()">
+
+
+  <div class="form-row">
+
+      <div class="form-group col-md-6">
+          <label for="inputState">Responsable *</label>
+          <select id="inputState" class="form-control" name="manager" formControlName="manager">
+                  <option selected></option>
+                  <option value={{item.mail}} selected *ngFor="let item of manager"> {{item.lastName}}
+                      {{item.firstName}} </option>
+             
+          </select>
+          <div *ngIf="folderForm.controls.manager.errors && folderForm.controls.manager.value|| identityError == 'true'" class="error">
+              <small class="text-danger" *ngIf="identityError == 'true' && !folderForm.controls.manager.value"> Ce Champ est Obligatoire
+              </small>
+          </div>
+      </div>
+      <div class="form-group col-md-6">
+          <label for="inputState">Source *</label>
+          <select id="inputState" class="form-control" name="source" formControlName="source">
+              <option selected></option>
+              <option > Interne</option>
+              <option>Externe</option>
+              <option>Spontanée</option>
+          </select>
+          <div *ngIf="folderForm.controls.source.errors && folderForm.controls.source.value|| identityError == 'true'" class="error">
+              <small class="text-danger" *ngIf="identityError == 'true' && !folderForm.controls.source.value"> Ce Champ est Obligatoire </small>
+          </div>
+      </div>
+  </div>
+
+
+
+  <div class="form-row">
+
+      <div class="form-group col-md-6">
+          <label for="inputEmail4">Date de candidature *</label>
+          <input type="date" class="form-control" id="inputEmail4" name="applicationDate" formControlName="applicationDate">
+          <div *ngIf="folderForm.controls.applicationDate.errors && folderForm.controls.applicationDate.value|| identityError == 'true'  " class="error">
+              <small class="text-danger" *ngIf="identityError == 'true' && !folderForm.controls.applicationDate.value"> Ce Champ est
+                  Obligatoire </small>
+          </div>
+      </div>
+
+      <div class="form-group col-md-6">
+          <label for="inputState">Cooptant <span *ngIf="folderForm.controls.source.value=='Interne'">*</span></label>
+          <select id="inputState" class="form-control" name="cooptedBy" formControlName="cooptedBy" >
+              
+                  <option value={{item.mail}} selected *ngFor="let item of manager"> {{item.lastName}}
+                      {{item.firstName}} </option>
+      </select>
+
+      </div>
+
+  </div>
+
+
+  <div class="form-row">
+      <div class="form-group col-md-6">
+          <label for="inputEmail4">Date de disponibilité *</label>
+          <input type="date" class="form-control" id="inputEmail4" name="disponibilityDate" formControlName="disponibilityDate">
+          <div *ngIf="folderForm.controls.disponibilityDate.errors && folderForm.controls.disponibilityDate.value|| identityError == 'true'" class="error">
+              <small class="text-danger" *ngIf="identityError == 'true' && !folderForm.controls.disponibilityDate.value"> Ce Champ est
+                  Obligatoire </small>
+          </div>
+
+      </div>
+      <div class="form-group col-md-6">
+          <label for="inputState">Poste Recherché *</label>
+          <input type="text" class="form-control" id="inputState" name="searchedPosition" formControlName="searchedPosition">
+    
+          <div *ngIf="folderForm.controls.searchedPosition.errors && folderForm.controls.searchedPosition.value|| identityError == 'true'" class="error">
+              <small class="text-danger" *ngIf="identityError == 'true' && !folderForm.controls.searchedPosition.value"> Ce Champ est
+                  Obligatoire </small>
+          </div>
+      </div>
+  </div>
+
+  <div class="form-row">
+
+      <div class="form-group col-md-6">
+          <label for="inputState"> Souhait Géographique </label>
+          <input type="text" class="form-control" id="inputState" name="geographicalWish" formControlName="geographicalWish">
+          
+
+      </div>
+
+  </div>
+
+  
+
+
+
+</form>

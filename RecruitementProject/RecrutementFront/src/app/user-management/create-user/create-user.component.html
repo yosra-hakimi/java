@@ -1,0 +1,143 @@
+<div _ngcontent-hko-c6="" class="col-md-10">
+
+        <div _ngcontent-hko-c6="" class="panel panel-primary">
+            <div _ngcontent-hko-c6="" class="panel-heading ">
+                <h4> <i [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'"
+                        style="color:blanchedalmond !important"></i> Identité <span class="label label-danger"
+                        *ngIf="error!=0">{{errorNumber}}</span></h4>
+    
+            </div>
+            <div _ngcontent-hko-c6="" class="panel-body">
+                <div>
+                    <i _ngcontent-gva-c12="" class=" fa  fa-user-plus fa-3x " ng-reflect-ng-style="[object Object]"
+                        style="color: rgb(51, 122, 183);"><span _ngcontent-gva-c12=""
+                            style="font-size: 23px">Coordonnées</span></i>
+                </div>
+                <hr>
+                <div _ngcontent-hko-c6="" class="panel-body">
+                    <div _ngcontent-hko-c6="" class="table-responsive">
+                        <form _ngcontent-sws-c7="" novalidate="" ng-reflect-form="[object Object]"
+                            class="ng-untouched ng-pristine ng-invalid" [formGroup]="userForm">
+                            <div _ngcontent-sws-c7="" class="form-row">
+                                <div _ngcontent-sws-c7="" class="form-group col-md-6">
+                                    <label _ngcontent-sws-c7="" for="lastName">Nom* :</label>
+                                    <input _ngcontent-sws-c7="" class="form-control ng-untouched ng-pristine ng-invalid"
+                                        formControlName="lastName" placeholder="Nom" type="text" ng-reflect-name="lastName">
+                                    <div *ngIf="showValidators" id="error">
+                                        <small class="text-danger" *ngIf="lastName.errors?.required">Nom obligatoire</small>
+                                        <small class="text-danger" *ngIf="lastName.errors?.maxlength">Nom contient au max 20
+                                            caractèresastName must have
+                                            maximum 20 characters"</small>
+                                    </div>
+                                </div>
+                                <div _ngcontent-sws-c7="" class="form-group col-md-6"><label _ngcontent-sws-c7=""
+                                        for="inputPassword4">Prénom* :</label><input _ngcontent-sws-c7=""
+                                        class="form-control ng-untouched ng-pristine ng-invalid" formControlName="firstName"
+                                        name="firstName" placeholder="Prénom" type="text" ng-reflect-name="firstName">
+                                    <div *ngIf="showValidators" id="error">
+                                        <small class="text-danger" *ngIf="firstName.errors?.required">Prénom
+                                            obligatoire</small>
+                                        <small class="text-danger" *ngIf="firstName.errors?.maxlength">Prénom contient au
+                                            max 20 caractères</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div _ngcontent-sws-c7="" class="form-row">
+                                <div _ngcontent-sws-c7="" class="form-group col-md-6"><label _ngcontent-sws-c7=""
+                                        for="inputEmail">Email* :</label><input _ngcontent-sws-c7=""
+                                        class="form-control ng-untouched ng-pristine ng-invalid" formControlName="mail"
+                                        id="inputEmail" name="mail" placeholder="Email" type="email" ng-reflect-name="mail"
+                                        (change)="controleMailExist($event)">
+                                    <div *ngIf="showValidators" id="error">
+                                        <small class="text-danger" *ngIf="mail.errors?.required">Email obligatoire</small>
+                                        <small class="text-danger" *ngIf="mail.errors?.pattern">Email non valide</small>
+                                    </div>
+                                    <div *ngIf="checkMail && !userForm.controls.mail.errors" class="error">
+                                        <small class="text-danger">Email existe déjà</small>
+                                    </div>
+                                </div>
+                                <div _ngcontent-sws-c7="" class="form-group col-md-6"><label _ngcontent-sws-c7=""
+                                        for="inputPassword">Mot de passe* :</label><input _ngcontent-sws-c7=""
+                                        class="form-control ng-untouched ng-pristine ng-invalid" formControlName="password"
+                                        id="inputPassword" name="password" type="password" placeholder="Mot de passe">
+                                    <div *ngIf="showValidators" id="error">
+                                        <small class="text-danger" *ngIf="password.errors?.required">Mot de passe
+                                            obligatoire</small>
+                                    </div>
+                                    <div *ngIf="password.invalid && password.touched" class="error">
+                                        <small class="text-danger" *ngIf="password.errors?.pattern">Mot de passe doit
+                                            contenir au moins 8 caractères du format Talan123</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div _ngcontent-sws-c7="" class="form-row">
+                                <div _ngcontent-sws-c7="" class="form-group col-md-6"><label _ngcontent-sws-c7=""
+                                        for="inputTelephone">Téléphone* :</label><input _ngcontent-sws-c7=""
+                                        class="form-control ng-untouched ng-pristine ng-invalid"
+                                        formControlName="phoneNumber" id="inputTelephone" name="phoneNumber"
+                                        placeholder="Telephone" type=number ng-reflect-name="phoneNumber">
+                                    <div *ngIf="showValidators" id="error">
+                                        <small class="text-danger" *ngIf="phoneNumber.errors?.required">Telephone
+                                            obligatoire</small>
+                                        <small class="text-danger" *ngIf="phoneNumber.errors?.maxlength">Telephone contient
+                                            au 20 caractères</small>
+                                        <small class="text-danger" *ngIf="phoneNumber.errors?.pattern">Telephone doit être
+                                            un nombre</small>
+                                    </div>
+                                </div>
+                                <div _ngcontent-sws-c7="" class="form-row">
+                                    <div _ngcontent-sws-c7="" class="form-group col-md-6"><label _ngcontent-sws-c7=""
+                                            for="inputDateBirth">Date de Naissance* :</label><input _ngcontent-sws-c7=""
+                                            class="form-control ng-untouched ng-pristine ng-invalid"
+                                            formControlName="dateOfBithday" id="inputDateBirth" name="dateOfBithday"
+                                            type="date" ng-reflect-name="dateOfBithday">
+                                        <div *ngIf="showValidators" id="error">
+                                            <small class="text-danger" *ngIf="dateOfBithday.errors?.required">Date de
+                                                naissance obligatoire</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div _ngcontent-sws-c7="" class="form-row">
+                                <div _ngcontent-sws-c7="" class="form-group col-md-6"><label _ngcontent-sws-c7=""
+                                        for="inputState">Nationalité* :</label>
+                                    <select _ngcontent-sws-c7="" class="form-control ng-untouched ng-pristine ng-invalid"
+                                        formControlName="nationality" id="inputState" name="nationality"
+                                        ng-reflect-name="nationality">
+                                        <option _ngcontent-sws-c7="">Tunisienne </option>
+                                        <option _ngcontent-sws-c7="">Française</option>
+                                    </select>
+                                    <div *ngIf="showValidators" id="error">
+                                        <small class="text-danger" *ngIf="nationality.errors?.required"> Nationalité
+                                            obligatoire</small>
+                                    </div>
+                                </div>
+                                <div >
+                                    <div _ngcontent-sws-c7="" class="form-group col-md-6"><label _ngcontent-sws-c7=""
+                                            for="inputProfile"> Profile* :</label>
+                                        <select _ngcontent-sws-c7="" 
+                                            class="form-control ng-untouched ng-pristine ng-valid" formControlName="profile"
+                                            id="inputProfile" name="profile" ng-reflect-name="profile">
+                                            <option *ngFor="let profile of profiles; let i = index" value={{profile.id}}>
+                                                {{profile.profileName}} 
+                                            </option>
+                                        </select>  
+                                        <div *ngIf="showValidators" id="error">
+                                                <small class="text-danger" *ngIf="profile.id.errors?.required"> Profile
+                                                    obligatoire</small>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </form>
+                    </div>
+                    <button _ngcontent-sws-c7="" class="btn btn-primary mb-2" (click)="AddUser()"><i _ngcontent-fgq-c4=""
+                            class="fa fa-plus"> Ajouter</i>
+                        Utilisateur</button>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    

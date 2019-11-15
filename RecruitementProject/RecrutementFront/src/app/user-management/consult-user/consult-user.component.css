@@ -1,0 +1,24 @@
+.iconcenter{text-align: center}
+.margin{margin: 5px;}
+.btn-social {
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+.btn-block+.btn-block {margin-top: 5px;}
+.btn-dropbox {
+    color: #fff;
+    background-color: #1087dd;
+    border-color: rgba(153, 45, 45, 0.2);
+      }
+.btn-block {display: block; width: 100%; }
+.form-control  {    width: 210px;    margin-bottom: 1%; display: inline-block; }
+#form-row-design { padding: 0% 3%;display: flex; flex-direction: column;  }
+label{ width:125px;}
+.panel-heading{display: flex; }
+.panel-heading-description{font-weight: 500; margin-right: 1%; display: flex; }
+#panel-heading-design{ color:#337ab7;cursor: pointer; }
+#form-row-heading {display: flex; padding-bottom: 10px; justify-content: space-around; margin-left: -3%;} 
+.form-row {  display: flex; justify-content: space-around;  }

@@ -1,0 +1,19 @@
+
+
+<app-update-informations (contactEvent)="onChangesCantact($event)" [contactFromGrandParent]="candidatForm" [experienceFromGrandParent]="experienceForm" (experienceEvent)="onChangesExperience($event)" [folderFromGrandParent]="folderForm" (folderEvent)="onChangesFolder($event)"
+[identityError]="identityError" [manager]="manager"  [universities]="universities" [appearParent]="appearParent"></app-update-informations>
+<app-update-documents   [candidat]="candidat"></app-update-documents>
+<app-update-interview [interviewsParent]="interviews" (changes)="onChangesInterview($event)"></app-update-interview>
+
+
+
+
+<div class="row">
+    <div class="col-md-3">
+            <button type="submit" class="btn btn-primary mb-2" (click)='onSubmit()'  >Modifier Condidat</button>
+    </div>
+    <div class="col-md-6"></div>
+    <div class="col-md-3">
+            <button type="submit" class="btn btn-danger mb-2" (click)='rejectCanidat()'  >Rejeter Condidat</button>
+    </div>
+</div>

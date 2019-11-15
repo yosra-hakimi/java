@@ -1,0 +1,13 @@
+<app-informations (contactEvent)="onChangesCantact($event)" [contactFromGrandParent]="candidatForm" [experienceFromGrandParent]="experienceForm" (experienceEvent)="onChangesExperience($event)" [folderFromGrandParent]="folderForm" (folderEvent)="onChangesFolder($event)"
+    [identityError]="identityError" [manager]="manager" (checkMailExist)="onChangescheckMailExist($event)" [universities]="universities" [mailExist]="mailExist" [appearParent]="appearParent" [cooptantList]="cooptantList">
+</app-informations>
+<app-documents (changes)="onChangesDocument($event)"></app-documents>
+
+<div *ngIf="authService.profile == 'backOfficeManager' ">
+
+<app-create-interview [interviewsParent]="interviews" [formInterview]="formInterview" (changes)="onChangesInterview($event)"  ></app-create-interview>
+</div>
+<div class="submit">
+
+    <button type="submit" class="btn btn-primary mb-2" (click)='onSubmit()'>Ajouter Candidat</button>
+</div>

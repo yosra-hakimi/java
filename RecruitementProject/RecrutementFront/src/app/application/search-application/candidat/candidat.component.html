@@ -1,0 +1,60 @@
+<div class="panel panel-default">
+    <div class="panel-heading " (click)='togglePendingAppearence()'>
+        <h4> <i [ngClass]="pendingAppear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'" style="color:black!important"></i> Candidatures soumises </h4>
+    </div>
+    <div class="panel-body" *ngIf='pendingAppear'>
+        <app-disp-candidat [candidats]="pending"></app-disp-candidat>
+    </div>
+
+</div>
+
+<!--*****************************************************************************************************-->
+<div class="panel panel-warning">
+    <div class="panel-heading " (click)='toggleEvaluatedAppearence()'>
+        <h4> <i [ngClass]="evaluatedAppear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'" style="color:black !important"></i> Candidatures en cours </h4>
+    </div>
+    <div class="panel-body" *ngIf='evaluatedAppear'>
+        <app-disp-candidat [candidats]="interviewInProgress"></app-disp-candidat>
+    </div>
+</div>
+<!--*****************************************************************************************************-->
+<div class="panel panel-info">
+    <div class="panel-heading " (click)='toggleInterviewAppearence()'>
+        <h4> <i [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'" style="color:blanchedalmond !important"></i> Candidats qui ont un entretien</h4>
+    </div>
+    <div class="panel-body" *ngIf='interviewAppear'>
+
+        <app-disp-candidat [candidats]="interviewInProgress" *ngIf="!interviewPlanedAppear"></app-disp-candidat>
+    </div>
+</div>
+
+<!--*****************************************************************************************************-->
+<div class="panel panel-success">
+    <div class="panel-heading " (click)='togglePropalAppearence()'>
+        <h4> <i [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'" style="color:black !important"></i> Propals </h4>
+    </div>
+    <div class="panel-body" *ngIf='propalAppear'>
+
+        <app-disp-candidat [candidats]="propalInProgress"></app-disp-candidat>
+    </div>
+</div>
+
+<!--*****************************************************************************************************-->
+<div class="panel panel-green">
+    <div class="panel-heading " (click)='toggleAcceptedAppearence()'>
+        <h4> <i [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'" style="color:blanchedalmond !important"></i> Candidats acceptés </h4>
+    </div>
+    <div class="panel-body" *ngIf='acceptedAppear'>
+        <app-disp-candidat [candidats]="accepted"></app-disp-candidat>
+    </div>
+</div>
+<!--*****************************************************************************************************-->
+<div class="panel panel-red">
+    <div class="panel-heading " (click)='toggleRejectedAppearence()'>
+        <h4> <i [ngClass]="appear ? 'btn fa fa-angle-double-up' :'btn fa fa-angle-double-down'" style="color:blanchedalmond !important"></i> Candidats rejetés </h4>
+    </div>
+    <div class="panel-body" *ngIf='rejectedAppear'>
+        <app-disp-candidat [candidats]="rejected"></app-disp-candidat>
+    </div>
+
+</div>

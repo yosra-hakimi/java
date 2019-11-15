@@ -1,0 +1,46 @@
+<form [formGroup]="propalForm">
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="startDay">Date d'embauche </label>
+      <input type="date" class="form-control" id="startDay" formControlName="startDay" name="startDay">
+
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="poste">Poste </label>
+      <select id="poste" class="form-control" name="poste" formControlName="poste">
+        <option selected></option>
+        <option> JAVA </option>
+        <option> PHP </option>
+        <option> TEST </option>
+      </select>
+
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="salary">Rénumération </label>
+      <input type="number" class="form-control" id="salary" placeholder="salaire" formControlName="salary"
+        name="salary">
+    </div>
+
+   
+     <div class="form-group col-md-3">
+      <label for="manager">Responsable </label>
+      <select id="manager" class="form-control" name="manager" formControlName="manager">
+        <option selected></option>
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+      </select>
+
+    </div>
+
+  </div>
+  <br>
+
+  <br>
+  <div class="button">
+    <button class="btn btn-success" type="submit" [disabled]="!propalForm.valid">Accepter</button>
+    <button class="btn btn-danger" type="submit" [disabled]="!propalForm.valid">Refuser</button></div>
+
+</form>
